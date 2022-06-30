@@ -21,6 +21,19 @@ a{
     text-decoration: none;
 }
 
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+p{
+    font-size: 1.4rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+}
 .container{
     min-height: 100vh;
     width: 100%;
@@ -29,7 +42,22 @@ a{
     justify-content: center;
 }
 
+.section-title{
+    font-size: 4rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.642);
+    margin-bottom: 5px;
+    margin-top: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-align: center;
+}
 /* Seção de apresentação*/
+
+#back{
+    background-color: #496e96b6;
+    
+}
 
 #presentation{
     background-image: url("abstratoRoxo.jpg");
@@ -92,7 +120,7 @@ a{
 }
 
 #presentation h1:nth-child(1) span{
-    animation-delay: .5s;
+    animation-delay: .6s;
 }
 #presentation h1:nth-child(2) span{
     animation-delay: 1.5s;
@@ -115,24 +143,24 @@ a{
 }
 
 /*Seção de Projetos*/
-
 #projetos .projetos{
     flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 10px 60px 40px 60px;
 }
 #projetos .projetos-header h1{
     margin-bottom: 50px;
 }
-#projetos .all-projects{
+#projetos .all-projects {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin: 10;
 }
 
-#projetos .project-info{
+#projetos .projects-info{
     padding: 30px;
     flex-basis: 50%;
     height: 100%;
@@ -141,8 +169,23 @@ a{
     justify-content: center;
     flex-direction: column;
     background-image: linear-gradient(60deg, #5a10b5 0%, #002349 100%);
+    color: white;
+   
+
 }
-#projetos .project-item{
+
+#projetos .projects-info h1 {
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+#projetos .projects-info h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+#projetos .projects-item {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,17 +194,39 @@ a{
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
+   
+}
+
+#projetos .projects-img {
+    flex-basis: 50%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+   
+}
+
+#projetos .projects-img:after {
+    content: '';
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    opacity: 0.4;
+}
+#projetos .projects-img img{
+    transition: 0.5 ease transform;
+}
+#projetos .projects-item:hover .projects-img{
+    transform: scale(1.04);
 }
 
 
-
-
 /*keyframe*/
-
 @keyframes text_reveal{
     100%{
-        color: white;
-
+        color: #ffffff;
     }
 }
 @keyframes text_reveal_name{
@@ -178,5 +243,64 @@ a{
     100%{
         width: 0%;
         left: 100%;
+    }
+}
+
+footer{    
+    display: inline-block;
+    width: 100%;
+    background-color: #496e96b6;
+    text-align: center;
+    padding: 3px;
+    border-radius: 0%
+}
+a { 
+    color: white;
+    font-family: 'Roboto'
+    
+}
+#esquerda{
+    text-align: left;
+    display: inline-block;
+    margin: 5px;
+    font-size: large;
+}
+#divisao{
+    display: inline-block;
+
+}
+#direita{
+    text-align: right;
+    display: inline-block;
+    margin: 5px;
+    font-size: large;
+}
+/* Media Query*/
+@media only screen and (min-width:510px) {
+    #projetos .projects-item {
+        flex-direction: row;
+        height: 400px;
+        margin: 0%;
+        width: 100%;
+        border-radius: 0%;
+        padding: 0px 60px;
+    }
+    #projetos .all-projects .projects-info{
+        height: 100%;
+        
+        
+    }
+    #projetos .all-projects .projects-img{
+        height: 100%;
+        
+    }
+    #projetos .projects-item:nth-child(even){
+        flex-direction: row-reverse;
+    }
+}
+@media only screen and (max-width:4700px){
+    #final{
+        padding-top: 60px;
+        padding-bottom: 60px;
     }
 }
